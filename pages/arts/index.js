@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { GetAllArts } from '../app-demo-data'
-import ArtList from '../components/art-list'
-import Pager from '../components/pager'
-import { ThemeProvider } from './../app-context'
+import { GetFeaturedArts } from '../../app-demo-data'
+import ArtList from '../../components/art-list'
+import Pager from '../../components/pager'
+import { ThemeProvider } from './../../app-context'
 
-export default function HomePage() {
+export default function ArtsPage() {
 	const pageSize = 6
 	const [artRecordCount, setArtRecordCount] = useState([])
 	const [artRecords, setArtRecords] = useState([])
 
 	useEffect(() => {
-		const records = GetAllArts()
+		const records = GetFeaturedArts()
 		setArtRecords(records)
 		setArtRecordCount(records.length)
 	}, [])
