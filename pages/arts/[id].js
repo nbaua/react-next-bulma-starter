@@ -18,8 +18,6 @@ export default function ArtDetailsPage(props) {
 		}
 	}, [router])
 
-	function handleTempering() {}
-
 	return (
 		<div className='columns is-mobile is-centered'>
 			<div className='column is-half mt-6'>
