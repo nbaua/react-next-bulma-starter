@@ -20,7 +20,7 @@ export default function ArtDetailsPage(props) {
 
 	return (
 		<div className='columns is-mobile is-centered'>
-			<div className='column is-half mt-6'>
+			<div className='column is-half-desktop is-10-mobile is-half-widescreen mt-6'>
 				<div className='card'>
 					<header className='card-header'>
 						<p className='card-header-title is-unselectable'>{title}</p>
