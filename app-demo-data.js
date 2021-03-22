@@ -31,9 +31,25 @@ export function GetFilteredArts(pageFilter) {
 	const { year, month } = pageFilter
 	let filteredArts = ARTS.filter((e) => {
 		const eventDate = new Date(e.date)
-		return eventDate.getFullYear() === year && eventDate.getMonth() + 1 == month
+		return eventDate.getMonth() === month - 1 && eventDate.getFullYear().toString() === pageFilter.year
 	})
 	return filteredArts
+}
+
+export function GetDisplayDates() {
+	let dates = ARTS.map((o) => o.date)
+	let filtered = ARTS.filter(({ date }, index) => {
+		return !dates.includes(date, index + 1)
+	})
+	return filtered
+		.map((o) => {
+			return new Date(o.date).getMonth() + 1 + '/' + new Date(o.date).getFullYear()
+		})
+		.reduce((a, b) => {
+			if (a.indexOf(b) < 0) a.push(b)
+			return a
+		}, [])
+		.sort()
 }
 
 const ARTS = [
