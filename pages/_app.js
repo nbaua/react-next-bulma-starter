@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import ArtSearch from '../components/art-search'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -73,6 +74,7 @@ function MyApp({ Component, pageProps }) {
 						</div>
 
 						<div className='navbar-end'>
+							<ArtSearch />
 							<div className='navbar-item'>
 								<div className='buttons'>
 									<a className='button is-dark' onClick={handleClick}>
