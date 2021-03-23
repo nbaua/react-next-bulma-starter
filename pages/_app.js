@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -13,6 +14,14 @@ function MyApp({ Component, pageProps }) {
 	const active = isModal ? 'is-active' : ''
 	return (
 		<section>
+			<Head>
+				<title>Real Art - React Nest JS Starter</title>
+				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+				<meta name='description' content='A starter project built using Next.Js for React and Seasoned with some Bulma CSS for the beautiful UI' />
+				<meta name='author' content='Nhilesh Baua' />
+				<meta name='keywords' content='Art, React, Next, React JS, Next Js, Bulma, Bulma CSS, React.JS, Next.JS' />
+				<meta name='revised' content={new Date()} />
+			</Head>
 			<div className={`modal ${active}`}>
 				<div className='modal-background' />
 				<div className='modal-card'>
