@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { GetFeaturedArts } from '../../app-demo-data'
 import ArtList from '../../components/art-list'
 import Pager from '../../components/pager'
-import { ThemeProvider } from './../../app-context'
+import { AppContextProvider } from './../../app-context'
 
 export default function ArtsPage() {
 	const pageSize = 6
@@ -16,7 +16,7 @@ export default function ArtsPage() {
 	}, [])
 
 	return (
-		<ThemeProvider>
+		<AppContextProvider>
 			<div>
 				<p>&nbsp;</p>
 				<Pager totalRecords={artRecordCount} pageSize={pageSize} />
@@ -26,6 +26,6 @@ export default function ArtsPage() {
 					</div>
 				</div>
 			</div>
-		</ThemeProvider>
+		</AppContextProvider>
 	)
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { GetAllArts } from '../app-demo-data'
 import ArtList from '../components/art-list'
 import Pager from '../components/pager'
-import { ThemeProvider } from './../app-context'
+import { AppContextProvider } from './../app-context'
 
 export default function HomePage() {
 	const pageSize = 6
@@ -16,7 +16,8 @@ export default function HomePage() {
 	}, [])
 
 	return (
-		<ThemeProvider>
+		// <ThemeProvider></ThemeProvider> -- something which needs to wait
+		<AppContextProvider>
 			<div>
 				<p>&nbsp;</p>
 				<Pager totalRecords={artRecordCount} pageSize={pageSize} />
@@ -26,6 +27,6 @@ export default function HomePage() {
 					</div>
 				</div>
 			</div>
-		</ThemeProvider>
+		</AppContextProvider>
 	)
 }

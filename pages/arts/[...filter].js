@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { GetFilteredArts } from '../../app-demo-data'
 import ArtList from '../../components/art-list'
-import { ThemeProvider } from './../../app-context'
+import { AppContextProvider } from './../../app-context'
 
 export default function ArtFilteredPage() {
 	const router = useRouter()
@@ -23,7 +23,7 @@ export default function ArtFilteredPage() {
 	}, [router])
 
 	return (
-		<ThemeProvider>
+		<AppContextProvider>
 			<div>
 				<p>&nbsp;</p>
 				<div className='container is-max-fluid is-centered'>
@@ -32,6 +32,6 @@ export default function ArtFilteredPage() {
 					</div>
 				</div>
 			</div>
-		</ThemeProvider>
+		</AppContextProvider>
 	)
 }
